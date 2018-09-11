@@ -20,9 +20,9 @@ namespace AvgMarks
             student1.Score = new int[] {9,10,10,10,10};
             student2.Score = new int[] {4,5,6,4,4,4,5,6,8,5,6};
             student3.Score = new int[] { 2,10,5};
-			student4.Score = new int[] {10,10,10,10,10,10,10,10,10,10,10,10,10,10,1};
-			student3.Score = new int[] { 2,3,5};
-			student3.Score = new int[] { 4,6,8,10};
+			student4.Score = new int[] {10,10,10,10,10,10,10,10,10,1};
+			student3.Score = new int[] { 2,3,5,10};
+			student3.Score = new int[] { 4,6,8,7,10};
             double []mas = new double[] { student1.GetAvgScore(student1.Score),
 			student2.GetAvgScore(student2.Score), student3.GetAvgScore(student3.Score),
 			student4.GetAvgScore(student4.Score),student5.GetAvgScore(student5.Score),
