@@ -49,7 +49,7 @@ namespace AvgMarks
         }
        public void GetInfo()
         {
-            Console.WriteLine($"Name: {Name} \tGroup:{Group} \tAverage Score: {GetAvgScore(Score)}\n");
+            Console.WriteLine($"ID:{Id} Name: {Name} \tGroup:{Group} \tAverage Score: {GetAvgScore(Score)}\n");
         }
 
        
