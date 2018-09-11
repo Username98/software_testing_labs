@@ -15,6 +15,10 @@ namespace AvgMarks
         public double AvgScore { get; set; }
         public static int studentsCount=0;
 
+		public Student()
+		{
+			
+		}
         public Student (int id,String name,string group)
         {
             this.Id = id;
