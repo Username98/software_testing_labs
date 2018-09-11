@@ -10,7 +10,7 @@ namespace AvgMarks
     {
         static void Main(string[] args)
         {
-            Student student1 = new Student(1,"Valera","2-1");
+            Student student1 = new Student(1,"Valera","2-2");
             Student student2 = new Student(2,"Katya","2-2");
             Student student3 = new Student(3, "Zhenya", "2-1");
 			Student student4 = new Student(4, "Sonya" , "2-1");
