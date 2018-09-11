@@ -1,0 +1,7 @@
+C:\Users\Vladislav\Desktop\AvgMarks\bin\Debug\AvgMarks.exe.config
+C:\Users\Vladislav\Desktop\AvgMarks\bin\Debug\AvgMarks.exe
+C:\Users\Vladislav\Desktop\AvgMarks\bin\Debug\AvgMarks.pdb
+C:\Users\Vladislav\Desktop\AvgMarks\obj\Debug\AvgMarks.csprojAssemblyReference.cache
+C:\Users\Vladislav\Desktop\AvgMarks\obj\Debug\AvgMarks.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Desktop\AvgMarks\obj\Debug\AvgMarks.exe
+C:\Users\Vladislav\Desktop\AvgMarks\obj\Debug\AvgMarks.pdb
