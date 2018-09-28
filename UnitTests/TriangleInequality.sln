@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleInequality", "TriangleInequality\TriangleInequality.csproj", "{FEEAECAD-DE63-476D-BEF4-B92D61675F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleInequalityTests", "TriangleInequalityTests\TriangleInequalityTests.csproj", "{8C7007A0-0F9E-4335-901D-417371E125C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEAECAD-DE63-476D-BEF4-B92D61675F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEAECAD-DE63-476D-BEF4-B92D61675F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEAECAD-DE63-476D-BEF4-B92D61675F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEAECAD-DE63-476D-BEF4-B92D61675F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7007A0-0F9E-4335-901D-417371E125C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7007A0-0F9E-4335-901D-417371E125C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7007A0-0F9E-4335-901D-417371E125C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7007A0-0F9E-4335-901D-417371E125C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80A453BA-CFFC-4D31-BCC2-C2FA0A3B0FFB}
+	EndGlobalSection
+EndGlobal
