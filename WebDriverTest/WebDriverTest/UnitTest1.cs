@@ -8,8 +8,7 @@ using System.Threading;
 namespace WebDriverTest
 {
     
-
-    [TestClass]
+     [TestClass]
     public class UnitTest1
     {
         IWebDriver chrome = new ChromeDriver(@"C:\Univer\4k\software_testing_labs\WebDriverTest\WebDriverTest\bin\Debug");
