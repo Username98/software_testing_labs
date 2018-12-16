@@ -11,10 +11,9 @@ namespace FrameworkTests.Pages
     {
         private readonly IWebDriver driver;
 
-
         private readonly WebDriverWait wait;
         private readonly string mainUrl = "https://ostrovok.ru/?tabs=aero&sid=495b0856-1ed2-443b-ae9a-bbc4d36e5f34";
- 
+
         [FindsBy(How = How.XPath, Using = @"//*[@id=':0']/div/div/div[1]/div/div[3]/div/div/div/div[1]/div/div[1]/div[1]/div/div/div[2]/input")]
         private IWebElement cityFrom;
 
@@ -55,7 +54,7 @@ namespace FrameworkTests.Pages
         {
             driver.Navigate().GoToUrl(this.mainUrl);
         }
-                 
+
         public void ClickAgreeCheckBox()
         {
             wait.Until(ExpectedConditions.ElementToBeClickable(agreeCheckBox));

@@ -9,8 +9,7 @@ namespace FrameworkTests.Test
     [TestFixture]
     public class Test
     {
-        public static IWebDriver driver;
-        Pages.MainPage mainPage = new Pages.MainPage(driver);
+        public IWebDriver driver;
 
         [SetUp]
         public void SetupTest()
@@ -20,6 +19,7 @@ namespace FrameworkTests.Test
         [Test]
         public void IdenticalCityToTest()
         {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
             mainPage.GoToThisUrl();
             mainPage.SetMainData("Minsk", "Minsk");
             mainPage.ClickSearchButton();
@@ -30,6 +30,7 @@ namespace FrameworkTests.Test
         [Test]
         public void UnsetAgreeCheckBox()
         {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
             mainPage.GoToThisUrl();
             mainPage.SetMainData("Moscow", "Minsk");
             mainPage.ClickAgreeCheckBox();
@@ -39,10 +40,11 @@ namespace FrameworkTests.Test
         [Test]
         public void EmptyCity()
         {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
             mainPage.GoToThisUrl();
             Assert.True(mainPage.EqualTabs());
         }
-            
+
         [TearDown]
         public void TeardownTest()
         {
