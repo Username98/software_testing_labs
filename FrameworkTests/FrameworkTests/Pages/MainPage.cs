@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using System.Threading;
 using System.Linq;
 
+
 namespace FrameworkTests.Pages
 {
     class MainPage
@@ -20,6 +21,20 @@ namespace FrameworkTests.Pages
         [FindsBy(How = How.XPath, Using = @"//*[@id=':0']/div/div/div[1]/div/div[3]/div/div/div/div[1]/div/div[1]/div[3]/div/div/div[2]/input")]
         private IWebElement cityTo;
 
+        [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div[2]/div[2]/div[2]/div/div[2]/div/div/form/div[1]/div[1]/label/div[2]")]
+        private IWebElement loginError;
+
+        [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div")]
+        private IWebElement accountButton;
+
+        [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div[2]/div[2]/div[2]/div/div[2]/div/div/form/div[1]/div[1]/label/input")]
+        private IWebElement emailField;
+
+        [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div[2]/div[2]/div[2]/div/div[2]/div/div/form/div[2]/button[1]")]
+        private IWebElement loginButton;
+                
+        [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[2]/div[1]/div/div/div[2]/div[3]/select")]
+        private IWebElement languageList;
 
         [FindsBy(How = How.XPath, Using = @"//*[@id=':0']/div/div/div[1]/div/div[3]/div/div/div/div[2]/div[2]/div[1]/button")]
         private IWebElement buttonSearch;
@@ -34,9 +49,32 @@ namespace FrameworkTests.Pages
         {
             this.driver = Browser;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);//  PageLoadTimeout(1, TimeUnit.SECONDS);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120);
             driver.Manage().Window.Size = new System.Drawing.Size(driver.Manage().Window.Size.Width, driver.Manage().Window.Size.Height);
             PageFactory.InitElements(Browser, this);
+        }
+
+        public void inputEmail(string email)
+        {
+            accountButton.Click();
+            emailField.SendKeys(email);
+            loginButton.Click();
+        }
+        public string GetIncorrectFormatError()
+        {
+            return loginError.Text;
+        }
+
+        public void ChooseEnglish()
+        {
+            languageList.SendKeys(Keys.Down + Keys.Enter);
+        }
+
+        public string GetCurrentLanguage()
+        {
+            Thread.Sleep(3000);
+            wait.Until(ExpectedConditions.ElementToBeClickable(buttonSearch));
+            return buttonSearch.Text;
         }
 
         public string GetBadSearchParams()

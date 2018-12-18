@@ -14,8 +14,17 @@ namespace FrameworkTests.Test
         [SetUp]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
+            driver = Driver.Driver.GetInstance();
         }
+        [Test]
+        public void invaidEmail()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.inputEmail("asdfasdf");
+            Assert.AreEqual(mainPage.GetIncorrectFormatError(), "Неверный формат");
+        }
+
         [Test]
         public void IdenticalCityToTest()
         {
@@ -45,10 +54,19 @@ namespace FrameworkTests.Test
             Assert.True(mainPage.EqualTabs());
         }
 
+        [Test]
+        public void ChangeLanguage()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.ChooseEnglish();
+            Assert.AreEqual(mainPage.GetCurrentLanguage(), "Search");
+        }
+
         [TearDown]
         public void TeardownTest()
         {
-            driver.Quit();
+            Driver.Driver.CloseBrowser();
         }
     }
 }
