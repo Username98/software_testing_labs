@@ -37,6 +37,18 @@ namespace FrameworkTests.Test
         }
 
         [Test]
+        public void SetReturnsDateEmpty()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.SetMainData("Minsk", "Moscow");
+            mainPage.ClickSearchButton();
+            mainPage.SwitchToActiveTab();
+            mainPage.ClearReturnsDate();
+            Assert.AreEqual(mainPage.GetReturnsDate(), "");
+        }
+
+        [Test]
         public void UnsetAgreeCheckBox()
         {
             Pages.MainPage mainPage = new Pages.MainPage(driver);
@@ -55,12 +67,39 @@ namespace FrameworkTests.Test
         }
 
         [Test]
-        public void ChangeLanguage()
+        public void ChangeLanguageToEnglish()
         {
             Pages.MainPage mainPage = new Pages.MainPage(driver);
             mainPage.GoToThisUrl();
             mainPage.ChooseEnglish();
             Assert.AreEqual(mainPage.GetCurrentLanguage(), "Search");
+        }
+
+        [Test]
+        public void ChangeLanguageToEspanol()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.ChooseDeutsch();
+            Assert.AreEqual(mainPage.GetCurrentLanguage(), "Buscar");
+        }
+
+        [Test]
+        public void ChangeLanguageToDeutsch()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.ChooseEspanol();
+            Assert.AreEqual(mainPage.GetCurrentLanguage(), "Suchen");
+        }
+
+        [Test]
+        public void ChangeLanguageToItaliano()
+        {
+            Pages.MainPage mainPage = new Pages.MainPage(driver);
+            mainPage.GoToThisUrl();
+            mainPage.ChooseItaliano();
+            Assert.AreEqual(mainPage.GetCurrentLanguage(), "Cercs");
         }
 
         [TearDown]

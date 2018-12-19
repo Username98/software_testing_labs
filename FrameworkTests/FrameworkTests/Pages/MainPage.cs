@@ -21,8 +21,15 @@ namespace FrameworkTests.Pages
         [FindsBy(How = How.XPath, Using = @"//*[@id=':0']/div/div/div[1]/div/div[3]/div/div/div/div[1]/div/div[1]/div[3]/div/div/div[2]/input")]
         private IWebElement cityTo;
 
+        [FindsBy(How = How.XPath, Using = @"//*[@id='flights - form - whitelabel_ru']/div[4]/div[2]/div[1]")]
+        private IWebElement clearReturnsDate;
+
+        [FindsBy(How = How.XPath, Using = @"//*[@id='flights - dates -return-prepop - whitelabel_ru']")]
+        private IWebElement returnsDate;
+
         [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div[2]/div[2]/div[2]/div/div[2]/div/div/form/div[1]/div[1]/label/div[2]")]
         private IWebElement loginError;
+        
 
         [FindsBy(How = How.XPath, Using = @"/html/body/div[1]/div[2]/div/div/div[4]/div/div")]
         private IWebElement accountButton;
@@ -54,6 +61,17 @@ namespace FrameworkTests.Pages
             PageFactory.InitElements(Browser, this);
         }
 
+        public void ClearReturnsDate()
+        {
+            wait.Until(ExpectedConditions.ElementToBeClickable(clearReturnsDate));
+            clearReturnsDate.Click();
+        }
+
+        public string GetReturnsDate()
+        {
+            return returnsDate.Text;
+        }
+
         public void inputEmail(string email)
         {
             accountButton.Click();
@@ -68,6 +86,21 @@ namespace FrameworkTests.Pages
         public void ChooseEnglish()
         {
             languageList.SendKeys(Keys.Down + Keys.Enter);
+        }
+
+        public void ChooseDeutsch()
+        {
+            languageList.SendKeys(Keys.Down+Keys.Down + Keys.Enter);
+        }
+
+        public void ChooseEspanol()
+        {
+            languageList.SendKeys(Keys.Down + Keys.Down+Keys.Down + Keys.Enter);
+        }
+
+        public void ChooseItaliano()
+        {
+            languageList.SendKeys(Keys.Down+Keys.Down + Keys.Down + Keys.Down + Keys.Enter);
         }
 
         public string GetCurrentLanguage()
